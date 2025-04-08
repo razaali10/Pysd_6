@@ -4,7 +4,7 @@ info:
   description: API for running and interacting with system dynamics models (.mdl, .xmile).
   version: "1.0.0"
 servers:
-  - url: https://your-app.onrender.com
+  - url: https://pysd-6.onrender.com
 paths:
   /model/upload:
     post:
