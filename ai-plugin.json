@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "PySD Model Simulator",
+  "name_for_model": "pysd_api",
+  "description_for_human": "Run and analyze system dynamics models via PySD.",
+  "description_for_model": "Use this tool to upload, simulate, and manipulate system dynamics models in .mdl or .xmile format.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://your-app.onrender.com/static/openapi.yaml"
+  },
+  "logo_url": "https://your-app.onrender.com/static/logo.png",
+  "contact_email": "your-email@example.com",
+  "legal_info_url": "https://your-website.com/legal"
+}

@@ -1,0 +1,72 @@
+openapi: 3.0.1
+info:
+  title: PySD API
+  description: API for running and interacting with system dynamics models (.mdl, .xmile).
+  version: "1.0.0"
+servers:
+  - url: https://your-app.onrender.com
+paths:
+  /model/upload:
+    post:
+      summary: Upload a model file (.mdl or .xmile)
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        "200":
+          description: Model uploaded
+  /model/run:
+    post:
+      summary: Run model simulation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                modelId:
+                  type: string
+                params:
+                  type: object
+                  additionalProperties:
+                    type: number
+                returnColumns:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        "200":
+          description: Simulation result
+  /model/components/{model_id}:
+    get:
+      summary: Get model structure (stocks, flows, etc.)
+      parameters:
+        - name: model_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Component list
+  /model/reset:
+    post:
+      summary: Remove model from memory
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                modelId:
+                  type: string
+      responses:
+        "200":
+          description: Reset successful
