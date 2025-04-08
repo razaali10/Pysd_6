@@ -9,7 +9,7 @@
   },
   "api": {
     "type": "openapi",
-    "url": "https://your-app.onrender.com/static/openapi.yaml"
+    "url": "https://pysd-6.onrender.com/openapi.yaml"
   },
   "logo_url": "https://your-app.onrender.com/static/logo.png",
   "contact_email": "your-email@example.com",
